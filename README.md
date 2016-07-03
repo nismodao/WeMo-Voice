@@ -1,2 +1,3 @@
-# wemo-switch
-Channel for Belkin Wemo smart switch
+Voice recogintion client and server for wemo smart switches
+
+

@@ -1,24 +1,22 @@
-var AWS = require('aws-sdk');
-AWS.config.update({
-  region: 'us-west-1'
-});
-var Consumer = require('sqs-consumer');
-var Wemo = require('./index');
-var WemoClient = require('./client');
 require('dotenv').config();
-var wemo = new Wemo();
+var AWS          = require('aws-sdk');
+AWS.config.update({region: 'us-west-1'});
+var Consumer     = require('sqs-consumer');
+var Wemo         = require('./index');
+var WemoClient   = require('./client');
+var wemo         = new Wemo();
 
 
-wemo.load(process.env.wemo_IP, function(deviceInfo) {
+wemo.load(process.env.wemo_IP, (deviceInfo) => {
   var client = wemo.client(deviceInfo);
   console.log(deviceInfo);   
-  client.on('binaryState', function(value) {
+  client.on('binaryState', (value) => {
     console.log('Binary State changed to: %s', value);
   });   
   var app = Consumer.create({
     queueUrl: process.env.queue_URL,
     handleMessage: function (message, done) {
-      if (message) {
+      if (!!message) {
         console.log('message is', message.Body);
         client.getBinaryState( (err,data) => {
           if (err) return console.log(err);
@@ -38,7 +36,7 @@ wemo.load(process.env.wemo_IP, function(deviceInfo) {
   },
   sqs: new AWS.SQS()
   });
-  app.on('error', function (err) {
+  app.on('error', (err) => {
     console.log(err.message);
   });
   app.start();

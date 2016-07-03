@@ -5,11 +5,28 @@ var Consumer     = require('sqs-consumer');
 var Wemo         = require('./index');
 var WemoClient   = require('./client');
 var wemo         = new Wemo();
+var ws = require("nodejs-websocket")
+ 
+// Scream server example: "hi" -> "HI!!!" 
+var server = ws.createServer(function (conn) {
+  console.log("New connection")
+    ws.connect('ws://localhost:8100', function (a,b,c) {
+      console.log(a,b,c);
+    });
+    console.log('ws.connect', ws);
+  conn.on("text", function (str) {
+    console.log("Received "+str)
+    conn.sendText(str.toUpperCase()+"!!!")
+  })
+  conn.on("close", function (code, reason) {
+    console.log("Connection closed")
+  })
+}).listen(8001)
 
 
 wemo.load(process.env.wemo_IP, (deviceInfo) => {
   var client = wemo.client(deviceInfo);
-  console.log(deviceInfo);   
+  //console.log(deviceInfo);   
   client.on('binaryState', (value) => {
     console.log('Binary State changed to: %s', value);
   });   

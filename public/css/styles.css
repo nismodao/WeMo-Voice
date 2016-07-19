@@ -1,12 +1,12 @@
 body{
   background-color: #f4f3ef;
   color: white;
-  font-size: 18px;
-  background: linear-gradient(89deg, #38dfca, #388ddf, #9c38df, #df386a, #ecb036);
+  font-size: 15px;
+  background: linear-gradient(89deg, #38dfca, #388ddf);
   background-size: 800% 800%;
-  -webkit-animation: AnimationName 60s ease infinite;
-  -moz-animation: AnimationName 60s ease infinite;
-  animation: AnimationName 60s ease infinite;
+  -webkit-animation: AnimationName 100s ease infinite;
+  -moz-animation: AnimationName 100s ease infinite;
+  animation: AnimationName 100s ease infinite;
 
 }
 
@@ -25,16 +25,6 @@ body{
     50%{background-position:100% 17%}
     100%{background-position:0% 84%}
 }
-/* cursor animation homepage */
-.cursor {
-  animation: Blink 1s ease-in 0s infinite;
-  font-size: 80px;
-  color: white;
-  font-weight: bold;
-  /*position: absolute;
-  left: 107px;
-  top: -23px;*/
-}
 
 @keyframes Blink {
   0% { opacity: 0 }
@@ -43,7 +33,7 @@ body{
 
 .main {
   position: center;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 /* Parents of the world */
@@ -86,16 +76,20 @@ button:hover {
 }
 
 .space-top {
-  margin-top: 70px;
+  margin-top: 200px;
 }
 
 h3 {
+  letter-spacing: 2px;
+}
+
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
   letter-spacing: 1px;
-}
-
-
-h3 {
-  font-weight: bold;
   font-size: 20px;
 }
 

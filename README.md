@@ -8,7 +8,7 @@ Voice recogintion client and server for Belkin Wemo Insight smart switches.
 
 Built on the Web Speech API and Tim Reinhard's low level Wemo Client Libarary @ https://github.com/timonreinhard/wemo-client.
 
-![preview](https://raw.githubusercontent.com/Wemo-Voice/master/WemoVoice.png)
+![preview](https://raw.githubusercontent.com/Wemo-Voice/blob/master/WemoVoice.png)
 
 
 

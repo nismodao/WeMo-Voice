@@ -1,4 +1,4 @@
-Voice recogintion client and server for Belkin Wemo Insight smart switches.
+![preview](https://raw.githubusercontent.com/nismodao/WeMo-Voice/master/WemoVoice.png)
 
 ## Instructions:
 1. Install the Wemo Insight according to directions.
@@ -8,7 +8,6 @@ Voice recogintion client and server for Belkin Wemo Insight smart switches.
 
 Built on the Web Speech API and Tim Reinhard's low level Wemo Client Libarary @ https://github.com/timonreinhard/wemo-client.
 
-![preview](https://raw.githubusercontent.com/nismodao/WeMo-Voice/master/WemoVoice.png)
 
 
 
